@@ -1,0 +1,11 @@
+const express=require("express")
+const app =express()
+const cors =require("cors")
+const bookRoute=require("./routes/bouksRoutes")
+require("./connexion/conn")
+app.use(cors())
+app.use(express.json())
+app.listen(1000,()=>{
+    console.log("server started successfully")
+})
+app.use("/api/v1",bookRoute)
